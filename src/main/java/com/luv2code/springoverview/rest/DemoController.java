@@ -4,9 +4,11 @@ import com.luv2code.springoverview.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/test")
 public class DemoController {
 
     private Coach coach;
@@ -27,5 +29,10 @@ public class DemoController {
     @GetMapping("/getDailyWorkout")
     public String getDailyWorkout() {
         return  coach.getDailyWorkout();
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World!";
     }
 }
